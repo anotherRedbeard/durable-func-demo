@@ -7,6 +7,7 @@
 # - run pip install -r requirements.txt
 
 import datetime
+import logging
 import time
 import azure.durable_functions as df
 import azure.functions as func
@@ -20,4 +21,5 @@ def main(context: func.Context, name: str) -> str:
         time.sleep(1)
 
     #raise Exception("ActivityFunction timed out")
+    logging.info("Hello delayed{name}!")
     return f"Hello delayed {name}!"
